@@ -1,0 +1,18 @@
+diameter1 = 0.1;
+diameter2 = 0.05; 
+density = 1000; 
+g = 9.81;
+h1 = 10; 
+h2 = 5; 
+flow_rate = linspace(0, 10, 100); 
+pressure1 = 1/2 * density * flow_rate.^2 ./ (pi * diameter1^2) + density * g * h1;
+pressure2 = 1/2 * density * flow_rate.^2 ./ (pi * diameter2^2) + density * g * h2;
+plot(flow_rate, pressure1, 'b', 'LineWidth', 2);
+hold on;
+plot(flow_rate, pressure2, 'r', 'LineWidth', 2);
+xlabel('Flow Rate (m^3/s)');
+ylabel('Pressure (Pa)');
+title('Pressure vs Flow Rate');
+legend('Pipe 1', 'Pipe 2');
+grid on;
+hold off;
